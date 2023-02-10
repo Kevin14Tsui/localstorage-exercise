@@ -38,9 +38,13 @@ function convert() {
     var user = JSON.parse(localStorage.userlist);
 }
 
-
+function showadminpanel(){
+    window.open("./adminpanel.html");
+}
 
 // adminpanel.html
-let show = document.getElementById("show")
-show.innerHTML = `Hi, ` + localStorage.getItem("currentUser") + 
-` You are,` + localStorage.getItem("userType");
+function showinfo(){
+    let show = document.getElementById("show")
+    show.innerHTML = `Hi, ` + localStorage.getItem("currentUser") + 
+    ` You are,` + localStorage.getItem("userType");  
+}
