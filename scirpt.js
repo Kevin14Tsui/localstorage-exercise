@@ -5,6 +5,9 @@ let user = [
 
 localStorage.userlist = JSON.stringify(user);
 
+let Apanel = document.getElementById("Apanel");
+let login = document.getElementById("login")
+Apanel.classList.add("d-none")
 // 2a,2b,task
 function checkLogin() {
     convert()
@@ -19,11 +22,8 @@ function checkLogin() {
             localStorage.setItem("userType", user[i].accountype);            
             alert("usernmae correct");
             if (localStorage.getItem("userType") == "admin"){
-               container.innerHTML =
-          `<p>Hi, ` +
-          user[i].username +
-          `~ go to the admin panel</p><br><br><a href="./adminpanel.html">
-          <button id="adminpagebtn" class="btn btn-primary">Admin Panel</button></a>`;
+                alert("you are admin")
+                Apanel.classList.remove("d-none");
             } else {
                 alert("Sorry, you are not admin")
             }
@@ -37,6 +37,7 @@ function checkLogin() {
 function convert() {
     var user = JSON.parse(localStorage.userlist);
 }
+
 
 
 // adminpanel.html
