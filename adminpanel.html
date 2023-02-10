@@ -6,11 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adminpanel</title>
+    <!-- <script src="./scirpt.js">
+
+    </script> -->
 </head>
 
 <body>
-    <div id="show"></div>
-    <script src="./scirpt.js"></script>
+    <div id="info"></div>
+    <script>
+        let Apanel = document.getElementById("Apanel");
+        let login = document.getElementById("login")
+        let info = document.getElementById("info");
+        info.innerHTML = localStorage.getItem("currentUser") + localStorage.getItem("userType");
+    </script>
 </body>
 
 </html>

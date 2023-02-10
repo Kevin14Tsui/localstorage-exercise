@@ -8,12 +8,12 @@ localStorage.userlist = JSON.stringify(user);
 let Apanel = document.getElementById("Apanel");
 let login = document.getElementById("login")
 Apanel.classList.add("d-none")
+
 // 2a,2b,task
 function checkLogin() {
     convert()
     var email = document.getElementById("exampleInputEmail1");
     var pw = document.getElementById("exampleInputPassword1");
-    var container = document.querySelector(".container")
     var login =true;
     for(let i =0; i<user.length; i++){
         if (email.value == user[i].email && pw.value == user[i].password) {
@@ -43,8 +43,5 @@ function showadminpanel(){
 }
 
 // adminpanel.html
-function showinfo(){
-    let show = document.getElementById("show")
-    show.innerHTML = `Hi, ` + localStorage.getItem("currentUser") + 
-    ` You are,` + localStorage.getItem("userType");  
-}
+let info = document.getElementById("info");
+info.innerHTML = localStorage.getItem("currentUser") + localStorage.getItem("userType") ;
